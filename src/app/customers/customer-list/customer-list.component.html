@@ -1,0 +1,57 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+
+    <mat-card>
+      <mat-card-content>
+        <h2>Posiciones</h2>
+        
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="nombreEmpresa">
+              <th mat-header-cell *matHeaderCellDef> Nombre Empresa </th>
+              <td mat-cell *matCellDef="let element"> {{element.razonSocial}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="nombre">
+              <th mat-header-cell *matHeaderCellDef> Nombre Producto </th>
+              <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="fechaEntregaInicio">
+              <th mat-header-cell *matHeaderCellDef> Fecha Disponibilidad </th>
+              <td mat-cell *matCellDef="let element"> {{element.fechaEntregaInicio}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="precio">
+              <th mat-header-cell *matHeaderCellDef> Precio </th>
+              <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+            </ng-container>
+
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="moneda">
+                <th mat-header-cell *matHeaderCellDef> Moneda </th>
+                <td mat-cell *matCellDef="let element"> {{element.moneda}} </td>
+              </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          
+        
+
+        </div>
+
+        
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>
